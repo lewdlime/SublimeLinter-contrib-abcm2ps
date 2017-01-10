@@ -6,21 +6,20 @@
 #
 # License: MIT
 
-"""This module exports the Abcm2pslint plugin class."""
+"""This module exports the Abcm2ps plugin class."""
 
 from SublimeLinter.lint import Linter, util
 
 
-class Abcm2pslint(Linter):
-    """Provides an interface to abcm2pslint."""
+class Abcm2ps(Linter):
+    """Provides an interface to abcm2ps."""
 
     syntax = 'abc'
-    cmd = 'abcm2ps -i -S -N 3 -j 1 -O ='
+    cmd = ['abcm2ps', '-i', '-S', '-N 3', '-j 1', '-O =']
     executable = None
-    # TODO: configure linter to only work if abcm2ps is in path
     version_args = '-V'
     version_re = r'abcm2ps-(?P<version>\d+\.\d+\.\d+) \(.*\)'
-    version_requirement = '>= 1.0'
+    version_requirement = '>= 5.0.0'
     regex = (
       r'^.+?:(?P<line>\d+):(?P<col>\d+): '
       r'(?:(?P<error>(?:Internal )?error)|(?P<warning>warning): )(?P<message>.+)'
@@ -35,7 +34,6 @@ class Abcm2pslint(Linter):
     # Highlight the symbol the error or warning occured on
     word_re = r'([-\w]+)'
     defaults = {
-      '-O:': '=',
       '--abc2pscompat:': 'no',
       '--alignbars:': 0,
       '--aligncomposer:': 2,

@@ -1,0 +1,10 @@
+SublimeLinter-contrib-abcm2pslint
+-------------------------------
+This linter plugin for SublimeLinter provides an interface to abcm2pslint.
+
+** IMPORTANT! **
+
+Before this plugin will activate, you *must*
+follow the installation instructions here:
+
+https://github.com/leesavide/SublimeLinter-contrib-abcm2pslint

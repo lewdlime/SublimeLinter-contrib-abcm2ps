@@ -10,6 +10,7 @@
 
 from SublimeLinter.lint import Linter, util
 
+
 class Abcm2ps(Linter):
     """Provides an interface to abcm2ps."""
 

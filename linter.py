@@ -10,7 +10,6 @@
 
 from SublimeLinter.lint import Linter, util
 
-
 class Abcm2ps(Linter):
     """Provides an interface to abcm2ps."""
 
@@ -146,4 +145,4 @@ class Abcm2ps(Linter):
     }
     inline_settings = None
     inline_overrides = None
-    comment_re = r'(?:^r:.*)|(?:\s*%.*)'
+    comment_re = r'(?:^r:.*)|(?:\[r:[^\r\n\]]*\])|(?:\s*%.*)'
